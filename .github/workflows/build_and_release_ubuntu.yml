@@ -15,15 +15,15 @@ jobs:
     - name: Install dependencies
       run: sudo apt-get install -y g++
     - name: Build
-      run: g++ -o hello hello.cpp
+      run: g++ -o fibonacci fibonacci.cpp
     - name: Extract version
       id: extract_version
       run: echo "VERSION=${GITHUB_REF#refs/tags/release-}" >> $GITHUB_OUTPUT
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: hello
-        path: ./hello
+        name: fibonacci
+        path: ./fibonacci
   release:
     needs: build
     runs-on: ubuntu-latest
@@ -34,10 +34,10 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v2
       with:
-        name: hello
+        name: fibonacci
     - name: Create release
       uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         prerelease: false
-        files: ./hello
+        files: ./fibonacci
