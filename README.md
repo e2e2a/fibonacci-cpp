@@ -49,7 +49,6 @@ To run the Docker image, use the following command:
 
 ```bash
 docker run -v ${PWD}:/app fibonacci
-docker run -v ./:/app fibonacci
 ```
 
 To run the fibonacci.exe:
