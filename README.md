@@ -19,7 +19,7 @@ Follow these steps to get a copy of the project up and running on your local mac
 First, clone the repository using the following commands:
 
 ```bash
-git clone https://github.com/e2e2a/fibonacci.git
+git clone https://github.com/e2e2a/fibonacci-cpp.git
 cd fibonacci-cpp
 ```
 
